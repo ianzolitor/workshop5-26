@@ -37,7 +37,7 @@ class Search extends React.Component {
 
       let results = cars.filter(function(car){
 
-      return car.brand===searchTerm || car.model===searchTerm || car.year===searchTerm
+      return car.brand.indexOf(searchTerm) >-1 || car.model.indexOf(searchTerm)>-1 || car.year===searchTerm
 
 
 
