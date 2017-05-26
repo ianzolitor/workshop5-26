@@ -6,31 +6,36 @@ class Search extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      brand: = "",
-      model: = "",
-      year: = ""
+      brand: "",
+      model: "",
+      year: ""
 
     }
+    this.showResults = this.showResults.bind(this);
   }
     render() {
-      return(
-      <div>
-        <input type="search" onChange = {this.showResults}
-      </div>
+      return (
+        <div>
+
+            <div className = "search-bar">Search Brand<input type="search" onChange = {this.showResults} value={this.state.brand} /> </div>
+            <div className = "type-results">{this.state.brand}</div>
+        </div>
+  )
 
 
-    )
     }
 
-    showResults () {
-      
+    showResults (event) {
+      this.setState({brand: event.target.value})
     }
 }
 
 
-ReactDOM.render(){
+ReactDOM.render(
+<Search />,react
+)
 
-}
+
 
 
 let car = [
